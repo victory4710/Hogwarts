@@ -15,11 +15,11 @@ class Tonglao:
         self.attack = attack
 
     def see_people(self, name):
-        if self.name == "WYZ":
+        if name == "WYZ":
             print("师弟！！！！")
-        elif self.name == "李秋水":
+        elif name == "李秋水":
             print("呸，贱人")
-        elif self.name == "丁春秋":
+        elif name == "丁春秋":
             print("叛徒！我杀了你")
         else:
             print("无名之辈，还不给姥姥我跪下！")
@@ -36,3 +36,9 @@ class Tonglao:
             elif enemy_hp <= 0:
                 print("你输了")
                 break
+
+
+if __name__ == '__main__':
+    tonglao = Tonglao(10000, 600)
+    tonglao.see_people("WYZ")
+    tonglao.fight_zms(30000, 600)

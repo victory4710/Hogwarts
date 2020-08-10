@@ -5,3 +5,7 @@ from Hogwarts.python.Day2.tonglao import Tonglao
 class Xuzhu(Tonglao):
     def read(self):
         print("罪过罪过")
+
+
+xuzhu = Xuzhu(100, 100)
+xuzhu.read()

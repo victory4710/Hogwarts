@@ -1,7 +1,7 @@
 import selenium
 from selenium import webdriver
+import shelve
 from selenium.webdriver.chrome.options import Options
-
 
 class TestSelenium:
     def setup(self):
@@ -18,6 +18,7 @@ class TestSelenium:
     # def test_get_cookie(self):
     #     self.driver.get("https://work.weixin.qq.com/wework_admin/frame#contacts")
     #     # cookies = self.driver.get_cookies()
+
 
     def test_add_user(self):
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
@@ -88,7 +89,9 @@ class TestSelenium:
                    {'domain': '.qq.com', 'httpOnly': False, 'name': 'sd_cookie_crttime', 'path': '/', 'secure': True,
                     'value': '1585032971231'}]
 
-
+        db = shelve.open("db/logincookies")
+        db['cookie'] = cookies
+        db.close()
         # cookies = self.driver.get_cookies()
         # print(cookies)
         for cookie in cookies:
